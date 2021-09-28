@@ -42,4 +42,4 @@ VMware x Kubernetes
 * [おうちクラウド ロゴキャラリー](https://assets.adobe.com/public/3cb60f7f-1f46-4157-7d5d-bb4ed49d0ad7)
 
 ## おうちクラウドについて質問したい
-本レポジトリの [GitHub Issues](https://github.com/tanzu-japan/ouchi-cloud/issues) に質問を投稿していただければ、各著者がベストエフォートで回答いたします。ご意見・ご要望や、各著者のおうちクラウドパーツに関する質問でも構いませんので、ご活用下さい！
+本レポジトリの [GitHub Issues](https://github.com/tanzu-japan/ouchi-cloud/issues) に質問を投稿していただければ、各著者がベストエフォートで回答いたします。ご意見・ご要望や、はたまた各著者のおうちクラウドパーツに関する質問でも構いませんので、ご活用下さい！
