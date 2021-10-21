@@ -77,7 +77,7 @@ NUCではなくキューブPCにすることで、10GbE NICカードなどの拡
 
 [Supermicro E300-9D](https://www.sunwaytech.co.jp/product/?c=t_products_detail&pk=3427) というガチなやつを購入したとのこと！こんなおしゃれな家にどう設置したのか、続報が待たれますねっ・・・！！
 
-## 槇家のおうちクラウド
+## 槙家のおうちクラウド
 ### Before
 <img src="./images/maki1_1.jpg" width="60%"><img src="./images/maki1_2.jpg" width="30%">
 
