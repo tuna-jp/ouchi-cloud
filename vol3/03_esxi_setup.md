@@ -13,18 +13,23 @@
 ## ESXi のインストール
 インストールは特別な事はせず、作成した USB メモリのインストーラを NUC に挿して起動します。
 
-インストーラが立ち上がらない時は NUC のブート画面で F10 を押して起動ディスクを指定してください。
-後は kickstart が読み込まれて自動で設定されます。
+インストーラが立ち上がらない時は NUC のブート画面で F10 を押して起動ディスクを指定します。
 
-kickstart を設定していない場合はウィザードに沿ってインストールデバイスの指定、パスワードの設定などを行ってください。
+kickstart を設定していない場合はウィザードに沿ってインストールデバイスの指定、パスワードの設定などを行います。
+
 
 ## ESXi の初期設定
-kickstart がうまく走って初期設定が完了すれば、ESXi の FQDN 設定、パスワード含めて設定済みの環境が立ち上がります。
-設定が反映されているか、ESXi のコンソール（黄色と黒の画面）にログインするか、
+初期インストールが完了し、再起動すると ESXi のコンソール画面（黄色と黒の画面）が立ち上がります。
+F2 キーを押下し、ESXi の IP アドレスや FQDN、DNS サーバーを指定します。
+
+※ ESXi のコンソール画面の事をダイレクト コンソール ユーザー インターフェイス (DCUI) と呼びます。
+
+公式ドキュメント [ESXi のダイレクト コンソール インターフェイスについて](https://docs.vmware.com/jp/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-E64B4311-11E5-44E8-8DB5-B438B4A14289.html)
 
 <img src="./images/11_ESXi_console.png" width="50%">
 
-Web ブラウザで ESXi の IP アドレスを https://<ip address> で入力し Host Client に接続して確認します。
+## vSphere Host Client を利用した操作
+Web ブラウザで ESXi の IP アドレスを https://<ip address> で入力し Host Client に接続してより詳細な設定を行います。
 
 <img src="./images/12_ESXi_Host_Client.png" width="50%">
 
