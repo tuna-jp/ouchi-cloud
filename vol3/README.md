@@ -43,4 +43,4 @@ Software Design 誌 2022年 1月号に記した以下の流れに沿って、作
 6. [vSphere Clusterの作成](./06_vsphere_cluster.md)
 
 
-<img src="./images/005_Setup.png" width="50%">
+<img src="./images/05_Setup.png" width="50%">
