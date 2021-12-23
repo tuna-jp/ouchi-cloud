@@ -75,7 +75,7 @@ PowerCLI のインストールや、利用前の準備については私の過�
 
 
 ### カスタムインストーラ作成の流れ
-<img src="./images/02_CustomISO.png" width="50%">
+<img src="./images/02_CustomISO.png" width="80%">
 
 ### PowerCLI Image builder を利用して NUC 用ドライバ入りのカスタムインストーラの作成
 
@@ -188,11 +188,11 @@ ESXi のインストーラを NUC にマウントして起動させた直後、"
 
 この画面で "Shift+O" を押下し、
 
-<img src="./images/03_ESXi_Install01.png" width="50%">
+<img src="./images/03_ESXi_Install01.png" width="80%">
 
 続いて systemMediaSize=min 等と追記して Enter でインストールを続行する事でシステム領域のサイズを指定します。
 
-<img src="./images/03_ESXi_Install17.png" width="50%">
+<img src="./images/03_ESXi_Install17.png" width="80%">
 
 
 またはインストーラを展開した USB メディアを PC で開き、boot.cfg ファイルの 6行目を kernelopt=runweasel systemMediaSize=min などとすることでサイズを指定することも可能です。

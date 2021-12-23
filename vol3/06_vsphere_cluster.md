@@ -22,60 +22,60 @@ Nested ESXi を 3 台作成したので続いて vSAN クラスタとして構�
 
 まずは仮想データセンターを右クリックして 「新規クラスタ」 をクリックします。
 
-<img src="./images/06_NestedCluster01.png" width="50%">
+<img src="./images/06_NestedCluster01.png" width="80%">
 
 vSphere HA や vSAN などのオプションを有効化できますが、後で編集もできるので一先ずこのまま続行して問題ないです。
 
-<img src="./images/06_NestedCluster02.png" width="50%">
+<img src="./images/06_NestedCluster02.png" width="80%">
 
 「完了」をクリックします。
 
-<img src="./images/06_NestedCluster03.png" width="50%">
+<img src="./images/06_NestedCluster03.png" width="80%">
 
 作成したクラスタを選択し、「構成」 > 「クラスタクイックスタート」 を表示します。
 
-<img src="./images/06_NestedCluster04.png" width="50%">
+<img src="./images/06_NestedCluster04.png" width="80%">
 
 vSphere HA や DRS、vSAN の有効有無は「クラスタの基本」から編集可能です。  
 今回は改めて全ての機能を有効化します。
 
-<img src="./images/06_NestedCluster05.png" width="50%">
+<img src="./images/06_NestedCluster05.png" width="80%">
 
 続いて「ホストの追加」をクリックします。
 
-<img src="./images/06_NestedCluster06.png" width="50%">
+<img src="./images/06_NestedCluster06.png" width="80%">
 
 作成した Nested ESXi 3台の情報を入力します。
 
-<img src="./images/06_NestedCluster07.png" width="50%">
+<img src="./images/06_NestedCluster07.png" width="80%">
 
-<img src="./images/06_NestedCluster08.png" width="50%">
+<img src="./images/06_NestedCluster08.png" width="80%">
 
-<img src="./images/06_NestedCluster09.png" width="50%">
+<img src="./images/06_NestedCluster09.png" width="80%">
 
 問題なければ「完了」をクリックします。
 
-<img src="./images/06_NestedCluster10.png" width="50%">
+<img src="./images/06_NestedCluster10.png" width="80%">
 
 
-<img src="./images/06_NestedCluster11.png" width="50%">
+<img src="./images/06_NestedCluster11.png" width="80%">
 
 しばらくするとホストの追加が完了します。
 この時点ではクラスタにホストが追加されただけなので、下の方に画面をスクロールして、
 
-<img src="./images/06_NestedCluster12.png" width="50%">
+<img src="./images/06_NestedCluster12.png" width="80%">
 
 「クラスタの構成」をクリックします。
 
-<img src="./images/06_NestedCluster13.png" width="50%">
+<img src="./images/06_NestedCluster13.png" width="80%">
 
 分散スイッチ構成 (vDS) は標準設定で進めますが、Nested ESXi に割り当てた 2 つの vNIC を割り当ててネットワークアダプタの冗長構成を組みたいので、
 
-<img src="./images/06_NestedCluster14.png" width="50%">
+<img src="./images/06_NestedCluster14.png" width="80%">
 
 下までスクロールしたら アダプタ0 (vmnic0) と アダプタ1 (vmnic1) が両方とも DSwitch 二割当たっているかを確認します。
 
-<img src="./images/06_NestedCluster15.png" width="50%">
+<img src="./images/06_NestedCluster15.png" width="80%">
 
 続いて vMotion ネットワークと vSAN ネットワークを構成しますが、  
 VLAN 機能のないネットワークスイッチを利用している場合は VLAN のチェックを外してください。
@@ -86,49 +86,49 @@ L2 スイッチをご利用で、ネットワークを分ける場合は適宜�
 
 任意の IP アドレスを Nested ESXi 3 台分割り当てます。
 
-<img src="./images/06_NestedCluster16.png" width="50%">
+<img src="./images/06_NestedCluster16.png" width="80%">
 
 vSAN ネットワークについても同様です。
 
-<img src="./images/06_NestedCluster17.png" width="50%">
+<img src="./images/06_NestedCluster17.png" width="80%">
 
 HA、DRS、vSAN のオプションはデフォルトのままで進みます。  
 
 ※ vSphere HA など高可用性の仕組みについては公式ドキュメントなどをご参照ください。  
 **[vSphere HA クラスタの作成と使用](https://docs.vmware.com/jp/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html)**
 
-<img src="./images/06_NestedCluster18.png" width="50%">
+<img src="./images/06_NestedCluster18.png" width="80%">
 
 vSAN データストアに追加するドライブをキャッシュとキャパシティそれぞれを設定します。  
 デフォルトでは容量が少ない方がキャッシュと判断されますので、  
 今回は 80GB と 300GB でそれぞれ 1 つずつ仮想ディスクを追加したのでそのまま正しく割り当てられているはずです。
 
-<img src="./images/06_NestedCluster19.png" width="50%">
+<img src="./images/06_NestedCluster19.png" width="80%">
 
 続いて vSAN Support Insight の有効無効について確認されます。  
 後から変更もできますので、ここではチェックを外して無効化で問題ないです。
 
-<img src="./images/06_NestedCluster20.png" width="50%">
+<img src="./images/06_NestedCluster20.png" width="80%">
 
-<img src="./images/06_NestedCluster21.png" width="50%">
+<img src="./images/06_NestedCluster21.png" width="80%">
 
 設定の最後に「完了」をクリックします。
 
-<img src="./images/06_NestedCluster22.png" width="50%">
+<img src="./images/06_NestedCluster22.png" width="80%">
 
 構成に問題が無ければ数分でクラスタのセットアップが完了します。  
 ※ 途中、タスクにいくつか警告やエラーが表示されますが、一先ず完了するまで見守ってください。
 
-<img src="./images/06_NestedCluster23.png" width="50%">
+<img src="./images/06_NestedCluster23.png" width="80%">
 
 無事にクラスタクイックスタートが完了すると vSAN クラスタも有効になり、  
 vSAN クラスタとしての UI も各種確認可能です。
 
-<img src="./images/06_NestedCluster24.png" width="50%">
+<img src="./images/06_NestedCluster24.png" width="80%">
 
 分散スイッチ(vDS) も自動的にセットアップされます。
 
-<img src="./images/06_NestedCluster25.png" width="50%">
+<img src="./images/06_NestedCluster25.png" width="80%">
 
 ここまででクラスタの基本セットアップは完了です。  
 Nested Cluster なので CPU やメモリに制限があるため、通常と同じパフォーマンスの仮想マシンを動作させる事は難しいですが、ゲスト OS をインストールして各種クラスタとしての動作確認をする事は可能です。

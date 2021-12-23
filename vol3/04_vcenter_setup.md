@@ -32,97 +32,97 @@ ESXi と同じか、ESXi より新しいバージョンの vCenter をダウン�
 
 今回は簡単な GUI でのインストールを行うので "vcsa-ui-installer" を開き、ご利用の OS のフォルダの中のインストーラ "Installer" を実行してください。
 
-<img src="./images/04_vCSA_Install01.png" width="50%">
+<img src="./images/04_vCSA_Install01.png" width="80%">
 
 インストーラを立ち上げるといくつかのメニューが選べます。ここでは「インストール」を選びます。  
 ※ 環境によっては日本語表示でない場合がありますのでその際は右上の言語設定から選択してください。
 
-<img src="./images/04_vCSA_Install02.png" width="50%">
+<img src="./images/04_vCSA_Install02.png" width="80%">
 
 vCenter のインストールは仮想アプライアンスのデプロイと、その後の vCenter としての初期設定の二つのステージで実行されます。
 
-<img src="./images/04_vCSA_Install03.png" width="50%">
+<img src="./images/04_vCSA_Install03.png" width="80%">
 
 EULA の承諾にチェックを入れて進みます。
 
-<img src="./images/04_vCSA_Install04.png" width="50%">
+<img src="./images/04_vCSA_Install04.png" width="80%">
 
 vCenter をデプロイする先の ESXi を指定します。  
 今回は用意した ESXi on NUC のアドレスとアカウントを入力します。
 
-<img src="./images/04_vCSA_Install05.png" width="50%">
+<img src="./images/04_vCSA_Install05.png" width="80%">
 
 vCenter の任意の仮想マシン名 (vSphere Client 上で表示される名称) と root アカウントのパスワードを指定します。
 
-<img src="./images/04_vCSA_Install06.png" width="50%">
+<img src="./images/04_vCSA_Install06.png" width="80%">
 
 vCenter のデプロイサイズを指定しますが、自宅らぼ環境であれは "極小" で十分足ります。  
 目安となる VM 数や管理する ESXi 台数が提示されていますので適切なものを選択します。
 
-<img src="./images/04_vCSA_Install07.png" width="50%">
+<img src="./images/04_vCSA_Install07.png" width="80%">
 
 vCenter を展開するデータストアを選択します。
 
-<img src="./images/04_vCSA_Install08.png" width="50%">
+<img src="./images/04_vCSA_Install08.png" width="80%">
 
 ネットワーク設定などを入力します。  
 ここで予め DNS サーバーに登録した vCenter の FQDN が必要になります。
 IP アドレスで登録する事もできますが、FQDN で登録した方が後々の運用が楽です。
 
-<img src="./images/04_vCSA_Install09.png" width="50%">
+<img src="./images/04_vCSA_Install09.png" width="80%">
 
 IP アドレスなど必要情報を入力します。
 
-<img src="./images/04_vCSA_Install10.png" width="50%">
+<img src="./images/04_vCSA_Install10.png" width="80%">
 
 最後に設定確認をして「完了」をクリック。
 
-<img src="./images/04_vCSA_Install11.png" width="50%">
+<img src="./images/04_vCSA_Install11.png" width="80%">
 
 5分 ~ 10分ほどでインストールのステージ 1 は完了します。
 
-<img src="./images/04_vCSA_Install12.png" width="50%">
+<img src="./images/04_vCSA_Install12.png" width="80%">
 
 
 完了したら「続行」をクリック。
 
-<img src="./images/04_vCSA_Install13.png" width="50%">
+<img src="./images/04_vCSA_Install13.png" width="80%">
 
 続いてステージ2。
 
-<img src="./images/04_vCSA_Install14.png" width="50%">
+<img src="./images/04_vCSA_Install14.png" width="80%">
 
 まずは時刻設定。
 
-<img src="./images/04_vCSA_Install15.png" width="50%">
+<img src="./images/04_vCSA_Install15.png" width="80%">
 
 ESXi で設定した NTP サーバーと同じ参照先が推奨されます。
 
-<img src="./images/04_vCSA_Install16.png" width="50%">
+<img src="./images/04_vCSA_Install16.png" width="80%">
 
 vSphere 環境を操作するための Single Sign On (SSO) の設定です。  
 ドメイン名は任意のものを利用できます(展開する vCenter の範囲だけで利用されますので、デフォルトの vsphere.local でも問題ありません)。
 
-<img src="./images/04_vCSA_Install17.png" width="50%">
+<img src="./images/04_vCSA_Install17.png" width="80%">
 
 CEIP (VMware カスタマー エクスペリエンス 向上 プログラム) を有効にするか否かを聞かれます。  
 vSAN クラスタを組むときなどは CEIP を有効にしているとオンライン健全性チェックに活用できますが、自宅らぼ運用の場合無効化(チェックを外す)しても問題ありません。  
 
 **[CEIPについてはこちらを参照](https://www.vmware.com/jp/solutions/trustvmware/ceip.html)**
 
-<img src="./images/04_vCSA_Install18.png" width="50%">
+<img src="./images/04_vCSA_Install18.png" width="80%">
 
 設定内容確認したら「完了」をクリック。
 
-<img src="./images/04_vCSA_Install19.png" width="50%">
+<img src="./images/04_vCSA_Install19.png" width="80%">
 
 設定は 10分 ~ 20分で完了します。
 
-<img src="./images/04_vCSA_Install20.png" width="50%">
+<img src="./images/04_vCSA_Install20.png" width="80%">
 
 完了したら vCenter へ Web ブラウザで接続しましょう。
 
-<img src="./images/04_vCSA_Install21.png" width="50%">
+<img src="./images/04_vCSA_Install21.png" width="80%">
 
 
 ## vSphere Client を利用した基本操作
@@ -133,66 +133,66 @@ vCenter のインストールについては以下の公式ドキュメントも
 vCenter の初期インストールが完了したら vCenter の FQDN (または IP アドレス) を Web ブラウザに入力してください。  
 「vSphere Client (HTML5) の起動」をクリックします。
 
-<img src="./images/04_vCSA_Setting02.png" width="50%">
+<img src="./images/04_vCSA_Setting02.png" width="80%">
 
 vSphere Client へのアクセスは SSO ユーザーを入力します。  
 ※ ドメイン名はステージ2 で指定したドメイン名です。
 
 デフォルト設定の場合は **administrator@vsphere.local** です。
 
-<img src="./images/04_vCSA_Setting03.png" width="50%">
+<img src="./images/04_vCSA_Setting03.png" width="80%">
 
 vSphere Client の基本画面が立ち上がります。
 
-<img src="./images/04_vCSA_Setting04.png" width="50%">
+<img src="./images/04_vCSA_Setting04.png" width="80%">
 
 まだ何もないので、まずは仮想データセンターを追加します。  
 左メニュー欄の vCenter のアイコンを右クリックすると操作可能なメニューが選べます。
 
-<img src="./images/04_vCSA_Setting06.png" width="50%">
+<img src="./images/04_vCSA_Setting06.png" width="80%">
 
 任意の名称を設定します。
 
-<img src="./images/04_vCSA_Setting07.png" width="50%">
-<img src="./images/04_vCSA_Setting08.png" width="50%">
+<img src="./images/04_vCSA_Setting07.png" width="80%">
+<img src="./images/04_vCSA_Setting08.png" width="80%">
 
 続いて ESXi ホストを追加します。作成した仮想データセンターを右クリックします。  
 ※ 一般的にはここで「クラスタ」を作成しますが今回はスキップしています。
 
-<img src="./images/04_vCSA_Setting09.png" width="50%">
+<img src="./images/04_vCSA_Setting09.png" width="80%">
 
 ESXi の FQDN (または IP アドレス) を入力します。  
 ※ ここで入力した文字列で vSphere Client 上で表示されます。
 
-<img src="./images/04_vCSA_Setting11.png" width="50%">
+<img src="./images/04_vCSA_Setting11.png" width="80%">
 
 root アカウントのパスワードを入力。
 
-<img src="./images/04_vCSA_Setting12.png" width="50%">
+<img src="./images/04_vCSA_Setting12.png" width="80%">
 
 ホストを確認し、
 
-<img src="./images/04_vCSA_Setting13.png" width="50%">
+<img src="./images/04_vCSA_Setting13.png" width="80%">
 
 ライセンスは評価モード期間をそのまま選択。
 
-<img src="./images/04_vCSA_Setting14.png" width="50%">
+<img src="./images/04_vCSA_Setting14.png" width="80%">
 
 ロックダウンモードは利用しません。
 
-<img src="./images/04_vCSA_Setting15.png" width="50%">
+<img src="./images/04_vCSA_Setting15.png" width="80%">
 
 「次へ」をクリック。
 
-<img src="./images/04_vCSA_Setting16.png" width="50%">
+<img src="./images/04_vCSA_Setting16.png" width="80%">
 
 入力内容に問題が無ければ「完了」をクリック。
 
-<img src="./images/04_vCSA_Setting17.png" width="50%">
+<img src="./images/04_vCSA_Setting17.png" width="80%">
 
 以上で vCenter 配下に ESXi が加わりました。
 
-<img src="./images/04_vCSA_Setting01.png" width="50%">
+<img src="./images/04_vCSA_Setting01.png" width="80%">
 
 ## vCenter のもう一つの管理画面 Virtual Appliance Management Interface (VAMI)
 
@@ -212,11 +212,11 @@ http://<vCenter IP or FQDN>:5480/
 vCenter 導入時に設定した root アカウントのパスワードを入力します。  
 ※ vCenter 7.0 以降では vSphere Client にアクセスする際の SSO ユーザー (administrator@vsphere.local) でもログイン可能ですが操作が一部制限されます。
 
-<img src="./images/04_VAMI1.png" width="50%">
+<img src="./images/04_VAMI1.png" width="80%">
 
 時刻設定やバックアップ設定、アップデートパッチの適用などもこの画面から行います。
 
-<img src="./images/04_VAMI2.png" width="50%">
+<img src="./images/04_VAMI2.png" width="80%">
 
 以上、vCenter の基本的な導入のご紹介でした。
 

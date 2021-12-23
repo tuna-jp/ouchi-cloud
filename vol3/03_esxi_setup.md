@@ -19,40 +19,40 @@ vSphere ESXi のインストールについては以下の公式ドキュメン�
 ウィザードに沿ってインストールデバイスの指定、パスワードの設定などを行います。
 ※ インストーラ USB メモリに kickstart を設定している場合はインストールは自動的に進行します。
 
-<img src="./images/03_ESXi_Install01.png" width="50%">
+<img src="./images/03_ESXi_Install01.png" width="80%">
 
 システム領域のサイズを指定する場合は上記画面で "Shift+O" を押下して、systemMediaSize=min などのパラメータを追記してください。詳細は **※ システム領域サイズのカスタマイズを行う場合は前項の [オプション : システム領域サイズのカスタマイズ]() を参照願います。**
 
 "F11" キーを押下してインストールを続行します。
 
-<img src="./images/03_ESXi_Install03.png" width="50%">
+<img src="./images/03_ESXi_Install03.png" width="80%">
 
 インストール先のドライブを指定します。  
 複数のドライブが NUC にマウントされている場合は容量やインターフェースの違いでインストール先を識別してください。
 
-<img src="./images/03_ESXi_Install04.png" width="50%">
+<img src="./images/03_ESXi_Install04.png" width="80%">
 
 キーボードレイアウトを指定します。
 
-<img src="./images/03_ESXi_Install05.png" width="50%">
+<img src="./images/03_ESXi_Install05.png" width="80%">
 
 ESXi の root アカウントのパスワードを設定します。
 
-<img src="./images/03_ESXi_Install06.png" width="50%">
+<img src="./images/03_ESXi_Install06.png" width="80%">
 
 最終確認をして ESXi のインストールを続行します。
 
-<img src="./images/03_ESXi_Install07.png" width="50%">
+<img src="./images/03_ESXi_Install07.png" width="80%">
 
 1～2分でインストールは完了します。
 
-<img src="./images/03_ESXi_Install08.png" width="50%">
+<img src="./images/03_ESXi_Install08.png" width="80%">
 
 最後に再起動を実行すればインストールは完了です。
 
-<img src="./images/03_ESXi_Install09.png" width="50%">
+<img src="./images/03_ESXi_Install09.png" width="80%">
 
-<img src="./images/03_ESXi_Install10.png" width="50%">
+<img src="./images/03_ESXi_Install10.png" width="80%">
 
 
 ## ESXi の初期設定
@@ -63,7 +63,7 @@ F2 キーを押下し、root アカウントでログインして ESXi の IP �
 
 公式ドキュメント **[ESXi のダイレクト コンソール インターフェイスについて](https://docs.vmware.com/jp/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-E64B4311-11E5-44E8-8DB5-B438B4A14289.html)**
 
-<img src="./images/03_ESXi_console.png" width="50%">
+<img src="./images/03_ESXi_console.png" width="80%">
 
 
 ### ESXi の IP アドレスの設定
@@ -74,54 +74,54 @@ F2 キーを押下し、root アカウントでログインして ESXi の IP �
 
 "Configure Management Network" を選びます。
 
-<img src="./images/03_ESXi_DCUI1.png" width="50%">
+<img src="./images/03_ESXi_DCUI1.png" width="80%">
 
 
 "Network Adapter"、"VLAN"、"IPv4 Configuration"、"IPv6 Configuration"、"DNS Configuration"、"Custom DNS Suffixes" など、カーソルを移動して設定していきます。
 
-<img src="./images/03_ESXi_DCUI2.png" width="50%">
+<img src="./images/03_ESXi_DCUI2.png" width="80%">
 
 "IPv4 Configuration" では固定 IP を設定します。
 
-<img src="./images/03_ESXi_DCUI3.png" width="50%">
+<img src="./images/03_ESXi_DCUI3.png" width="80%">
 
 "DNS Configuration" では DNS サーバーの指定と、ESXi のホスト名を指定します。
 
 ※ DNS サーバーが自宅らぼ環境にない場合は、一旦は空欄にするか仮の DNS サーバーの IP アドレスを入力してください。現在セットアップ中の ESXi に後ほど DNS サーバーを構築する事も可能なので DNS サーバーが用意でき次第に設定します。
 
-<img src="./images/03_ESXi_DCUI4.png" width="50%">
+<img src="./images/03_ESXi_DCUI4.png" width="80%">
 
 "Custom DNS Suffixes" ではドメイン名を指定します。
 
 こちらも DNS サーバーが用意されていない場合は、今後用意する前提でそのドメイン名を入れておきましょう。
 
-<img src="./images/03_ESXi_DCUI5.png" width="50%">
+<img src="./images/03_ESXi_DCUI5.png" width="80%">
 
 IP アドレス関連の入力が完了後、"ESC" キーで設定画面を抜ける際に設定反映のためにネットワークの再起動を促されますので "Y" キーを押下して設定反映します。
 
-<img src="./images/03_ESXi_DCUI6.png" width="50%">
+<img src="./images/03_ESXi_DCUI6.png" width="80%">
 
 
 ※ オプション設定
 ESXi のローカルシェルを利用する場合や SSH 接続で CLI で操作する場合には DCUI の "Troubleshooting Options" から設定します。
 
-<img src="./images/03_ESXi_DCUI7.png" width="50%">
+<img src="./images/03_ESXi_DCUI7.png" width="80%">
 
 
 画面の見方は左側の黄色のメニューがこれから設定変更する内容、右側の灰色の表示が現在の設定内容を示しています。
 
-<img src="./images/03_ESXi_DCUI8.png" width="50%">
+<img src="./images/03_ESXi_DCUI8.png" width="80%">
 
 上二つの "Enable ESXi Shell"、"Enable SSH" を必要に応じて有効化します。
 
-<img src="./images/03_ESXi_DCUI9.png" width="50%">
+<img src="./images/03_ESXi_DCUI9.png" width="80%">
 
 
 
 ## vSphere Host Client を利用した操作
 ESXi の IP アドレスを設定した後は Web ブラウザで ESXi の IP アドレスを https://<ip address> と指定して Host Client に接続出来ます。この UI を用いて詳細な設定を行います。
 
-<img src="./images/03_ESXi_Host_Client.png" width="50%">
+<img src="./images/03_ESXi_Host_Client.png" width="80%">
 
 ### NTP 時刻同期設定
 
@@ -130,25 +130,25 @@ ESXi の IP アドレスを設定した後は Web ブラウザで ESXi の IP �
 
 Host Client で左上の ESXi ホストを開き、「管理」 > 「システム」 > 「日付と時刻」を開き、「NTP 設定の編集」を選択します。
 
-<img src="./images/03_ESXi_NTP0.png" width="50%">
+<img src="./images/03_ESXi_NTP0.png" width="80%">
 
 NTP 設定で「NTP サービス起動ポリシー」は「ホストと連動して起動および停止します」を選択  
 NTP サーバーはアクセス可能なサーバーを指定します。
 
-<img src="./images/03_ESXi_NTP1.png" width="50%">
+<img src="./images/03_ESXi_NTP1.png" width="80%">
 
 設定しただけでは NTP サービスは稼働していないので、「管理」 > 「サービス」 > "ntpd" を選択し起動します。
 
-<img src="./images/03_ESXi_NTP2.png" width="50%">
+<img src="./images/03_ESXi_NTP2.png" width="80%">
 
 起動すると緑の三角マークで「実行中のステータスになります」
 
-<img src="./images/03_ESXi_NTP3.png" width="50%">
+<img src="./images/03_ESXi_NTP3.png" width="80%">
 
 
 もう一度「日付と時刻」の設定画面に戻ると時刻同期が開始されたことが確認できます。
 
-<img src="./images/03_ESXi_NTP4.png" width="50%">
+<img src="./images/03_ESXi_NTP4.png" width="80%">
 
 
 ## 仮想マシンネットワークの追加、設定
@@ -163,9 +163,9 @@ ESXi のデフォルト状態では 「vSwitch0」 という vSS が作成され
 
 ポートグループ単位で VLAN 設定やセキュリティ設定を行います。
 
-<img src="./images/03_ESXi_NW1.png" width="50%">
+<img src="./images/03_ESXi_NW1.png" width="80%">
 
-<img src="./images/03_ESXi_NW5.png" width="50%">
+<img src="./images/03_ESXi_NW5.png" width="80%">
 
 
 デフォルトでは Native VLAN (ESXi から見ると VLAN 無し = VLAN 0) が設定されていますが、アップリンク側のスイッチと合わせてポートグループを追加して設定を変える事が可能です。
@@ -173,7 +173,7 @@ ESXi のデフォルト状態では 「vSwitch0」 という vSS が作成され
 この後に構成する Nested ESXi を作成する時など、アップリンクスイッチから Trunk VLAN 設定をそのままポートグループに渡したい場合は 「VLAN 4095」を指定します。  
 ※ vDS 利用時は 「Trunk VLAN 」 の設定がメニューで指定可能。
 
-<img src="./images/03_ESXi_NW4.png" width="50%">
+<img src="./images/03_ESXi_NW4.png" width="80%">
 
 また、Nested ESXi を ESXi 上に作成する時や、仮想ルータを ESXi 上に作成する場合にはポートグループのセキュリティ設定を緩和する必要があります。
 
@@ -195,30 +195,30 @@ ESXi をインストールしたドライブはシステム領域以外は VMFS 
 
 特に、NVMe SSD はサポートされるモデルが限定されますので、先にご紹介した **[Flings Community NVMe Driver for ESXi](https://flings.vmware.com/community-nvme-driver-for-esxi)** をインストールして認識されるかの切り分けが必要です。
 
-<img src="./images/03_ESXi_Storage0.png" width="50%">
+<img src="./images/03_ESXi_Storage0.png" width="80%">
 
 追加のドライブが確認できる場合は「新しいデータストア」を選択します。
 
-<img src="./images/03_ESXi_Storage1.png" width="50%">
+<img src="./images/03_ESXi_Storage1.png" width="80%">
 
 対象のドライブを選択し、任意の名称を付けます。
 
-<img src="./images/03_ESXi_Storage2.png" width="50%">
+<img src="./images/03_ESXi_Storage2.png" width="80%">
 
 全てのパーティションを「VMFS6」でフォーマットします。  
 ※ パーティションを分ける事もできますが自宅らぼで使う上で意味が無いのでしません。
 
-<img src="./images/03_ESXi_Storage3.png" width="50%">
+<img src="./images/03_ESXi_Storage3.png" width="80%">
 
 最後に確認して完了です。
 
-<img src="./images/03_ESXi_Storage4.png" width="50%">
+<img src="./images/03_ESXi_Storage4.png" width="80%">
 
 ちなみに、他の環境で利用したことのあるドライブを流用する際は、ドライブ上に元のデータ（パーティション）が残っている場合があります。  
 その際は対象のドライブを選択し「アクション」 > 「パーティションテーブルをクリア」を実行します。
 ※ この作業は元のデータへのアクセスが不可になる事を意味します、間違えて作業しないように慎重に確認をしてください。
 
-<img src="./images/03_ESXi_Storage5.png" width="50%">
+<img src="./images/03_ESXi_Storage5.png" width="80%">
 
 
 以上で ESXi の基本的な設定は完了しました。
@@ -232,21 +232,21 @@ ESXi をインストールしたドライブはシステム領域以外は VMFS 
 
 仮想マシンを新規に作成してパワーオンすると以下の様に "コンソール" が選べるようになります。
 
-<img src="./images/03_VMRC1.png" width="50%">
+<img src="./images/03_VMRC1.png" width="80%">
 
 「VMRC のダウンロード」を選択します。
 
-<img src="./images/03_VMRC2.png" width="50%">
+<img src="./images/03_VMRC2.png" width="80%">
 
 [VMware Remote Console (VMRC) ダウンロードページ](https://customerconnect.vmware.com/en/downloads/details?downloadGroup=VMRC1201&productId=876)
 
-<img src="./images/03_VMRC3.png" width="50%">
+<img src="./images/03_VMRC3.png" width="80%">
 
 VMRC がインストールされると、仮想マシンのコンソールを開く際に「リモートコンソールを起動」するを選べば専用のツールが起動します。
 
 PC 上の ISO イメージファイルを直接仮想マシンに接続させるときも、VMRC のメニューから簡単に行えて便利です。
 
-<img src="./images/03_VMRC4.png" width="50%">
+<img src="./images/03_VMRC4.png" width="80%">
 
 
 
