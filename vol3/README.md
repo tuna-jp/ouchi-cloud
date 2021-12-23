@@ -23,11 +23,6 @@ Software Design 誌 2022年 1月号に記した以下の流れに沿って、作
 
 <img src="./images/00_Setup.png">
 
-## [VMware DevOps Meetup #10](https://vmware.connpass.com/event/223160/) - (2021年9月22日開催)
-今回まとめた内容は、Software Design 誌 2022年 1月号 の紙面情報の他、2021年9月に開催されたコミュニティイベントの登壇資料にもまとめておりますので併せて参照願います。
-
- * [自宅らぼ再入門　おうちクラウドのすすめ](https://www.slideshare.net/yukikawamitsu/20210922-250264836) - Intel NUC を利用して自宅で vSphere ESXi クラスタを導入するための考慮点を紹介。
-
 
 ## 今回の前提となる Intel NUC 構成
 

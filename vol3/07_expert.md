@@ -13,6 +13,10 @@
 
 - [VMware Technology Network 日本語フォーラム](https://communities.vmware.com/t5/Japanese/ct-p/10050)  
 日本語で VMware に技術に関する事なら何でも質問できるコミュニティです。[@gowatana](https://twitter.com/gowatana) さんと私でモデレータをしていますのでお気軽に投稿してください。
+- [VMware DevOps Meetup](https://vmware.connpass.com/)
+  - [VMware DevOps Meetup #10](https://vmware.connpass.com/event/223160/) - (2021年9月22日開催)
+今回まとめた内容は、Software Design 誌 2022年 1月号 の紙面情報の他、2021年9月に開催されたコミュニティイベントの登壇資料にもまとめておりますので併せて参照願います。  
+[自宅らぼ再入門　おうちクラウドのすすめ](https://www.slideshare.net/yukikawamitsu/20210922-250264836) - Intel NUC を利用して自宅で vSphere ESXi クラスタを導入するための考慮点を紹介。
 
 ## 日本の Expert たち
 
