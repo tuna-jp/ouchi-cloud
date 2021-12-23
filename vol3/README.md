@@ -32,24 +32,24 @@ Software Design 誌 2022年 1月号に記した以下の流れに沿って、作
 "NUC11PAHi5" は CPU は最初から搭載されていますが、ドライブとメモリは別途で対応製品を購入します。
 2.5 inch の SATA ドライブと m.2 インターフェースの NVMe または SATA ドライブが搭載可能で、メモリは DDR4-3200 SO-DIMM を 2 枚搭載し最大 64GB までサポートされます。
 
-<img src="./images/00_NUC_Basic.png" width="50%">
+<img src="./images/00_NUC_Basic.png" width="80%">
 
 
 購入する際に、本体には AC アダプタは付属していますが、その先のコンセントに接続する 3ピンコードは含まれないのでこれも併せて購入します。
 
 また、vSphere ESXi をインストールする際や NUC の BIOS・Firmwear の更新時に USB メモリが必要となるので1つ用意します。2GB ~ 4 GB あれば十分です。
 
-<img src="./images/00_NUC_Components.png" width="50%">
+<img src="./images/00_NUC_Components.png" width="80%">
 
 
 その他、Intel NUC を利用した vSphere 環境を構築する際にはネットワークスイッチや、作業用のモニタ、USB 接続のキーボードなども必要なので用意してください。
 
-<img src="./images/00_NUC_Option.png" width="50%">
+<img src="./images/00_NUC_Option.png" width="80%">
 
 
 準備した NUC にこの後 vSphere ESXi をインストールしていきますが、今回は 2.5 inchの SSD に ESXi をインストールし、残りの領域と NMVe SSD を仮想マシンデータ (VMDK ファイル) を格納するデータストアとして利用します。
 
-<img src="./images/00_NUC_Install.png" width="50%">
+<img src="./images/00_NUC_Install.png" width="80%">
 
 
 
