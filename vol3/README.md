@@ -1,6 +1,8 @@
 # おうちクラウド 第3回 "仮想化基盤を作ってみよう" サンプルコード・参考情報集
 
-VMware Japan で vSAN HCI や Cloud foundation といったインフラ製品(仮想化基盤)のプロダクト SE をしている川満です。
+VMware Japan で vSAN HCI や Cloud foundation といったインフラ製品(仮想化基盤)のプロダクト SE をしている[川満](https://vexpert.vmware.com/directory/477)です。  
+Twitter は本名のまま [@yuki_kawamitsu](https://twitter.com/yuki_kawamitsu) で行っています。
+
 本コンテンツは執筆を担当した Software Design 誌 2022年 1月号 146頁 ~ 152頁 "はじめよう おうちクラウド" 第3回 "仮想化基盤を作ってみよう" の掲載内容を補足するサンプルスクリプト、参照先情報をまとめたものとなります。
 
 Intel NUC を使って自宅らぼを組んでみよう、vSphere をインストールしてみよう！という方向けの内容をご紹介します。

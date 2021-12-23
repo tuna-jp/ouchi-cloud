@@ -5,6 +5,7 @@
 5. [vCenter のデプロイと基本設定](./04_vcenter_setup.md)
 6. [Nested ESXi のデプロイ](./05_nested_esxi.md)
 7. [vSphere Cluster の作成](./06_vsphere_cluster.md)
+8. [自宅 vSphere らぼの Expert をご紹介](./07_expert.md)
 
 # ESXiのインストールと基本設定
 
