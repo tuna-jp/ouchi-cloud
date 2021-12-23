@@ -1,7 +1,7 @@
 # おうちクラウド 第3回 "仮想化基盤を作ってみよう" サンプルコード・参考情報集
 
 VMware Japan で vSAN HCI や Cloud foundation といったインフラ製品(仮想化基盤)のプロダクト SE をしている[川満](https://vexpert.vmware.com/directory/477)です。  
-Twitter は本名のまま [@yuki_kawamitsu](https://twitter.com/yuki_kawamitsu) 、そのほかに個人ブログ**[「調べたこと 試したこと」](https://kwmtlog.blogspot.com/)**でも vSphere や vSAN 関連のネタを公開しています。
+Twitter は本名のまま [@yuki_kawamitsu](https://twitter.com/yuki_kawamitsu) 、そのほかに個人ブログ **[「調べたこと 試したこと」](https://kwmtlog.blogspot.com/)** でも vSphere や vSAN 関連のネタを公開しています。
 
 本コンテンツは執筆を担当した **[Software Design 誌 2022年 1月号](https://gihyo.jp/magazine/SD/archive/2022/202201)** 146頁 ~ 152頁 **"はじめよう おうちクラウド" 第3回 "仮想化基盤を作ってみよう"** の掲載内容を補足するサンプルスクリプト、参照先情報をまとめたものとなります。
 
