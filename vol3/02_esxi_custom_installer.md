@@ -1,18 +1,19 @@
 1. [メインへ](./README.md)
-2. [NUCの初期設定](./01_nuc_setup.md)
-3. [ESXiインストーラの作成](./02_esxi_custom_installer.md)
-4. [ESXiのインストールと基本設定](./03_esxi_setup.md)
-5. [vCenterのデプロイと基本設定](./04_vcenter_setup.md)
-6. [Nested ESXiのデプロイ](./05_nested_esxi.md)
-7. [vSphere Clusterの作成](./06_vsphere_cluster.md)
+2. [NUC の初期設定](./01_nuc_setup.md)
+3. [ESXi インストーラの作成](./02_esxi_custom_installer.md)
+4. [ESXi のインストールと基本設定](./03_esxi_setup.md)
+5. [vCenter のデプロイと基本設定](./04_vcenter_setup.md)
+6. [Nested ESXi のデプロイ](./05_nested_esxi.md)
+7. [vSphere Cluster の作成](./06_vsphere_cluster.md)
 
 # ESXi インストーラの作成
 vSphere ESXi は VMware サポートサイトから ISO 形式のインストーラをダウンロードして、PC・サーバにインストールする事が出来ますが、
 ハードウェアによってはネットワークインターフェースカード(NIC) や IO Controller のドライバを追加する必要があります。
 
-今回の利用している Intel 第11世代 NUC もオンボードの NIC である Intel i225-V は標準の ESXi インストーラにはドライバが含まれないため、個別にドライバを含めたインストーラを作成する必要があります。
+今回の利用している Intel 第11世代 NUC はオンボード NIC の Intel i225-V は標準の ESXi インストーラにはドライバが含まれないため、個別にドライバを含めたインストーラを作成する必要があります。
 
 ご利用のハードウェアによって標準インストーラのまま利用可能な場合もありますので、まずは標準インストーラで試してみてください。
+※ カスタムインストーラの作成が必要か否かは標準 ESXi インストーラでのインストールを試してみるのが手っ取り早いです。
 
 ## ESXi のダウンロード
 VMware 製品の評価版ダウンロードは [製品評価センター](https://www.vmware.com/jp/try-vmware.html) から入手可能です。
@@ -20,28 +21,37 @@ VMware 製品の評価版ダウンロードは [製品評価センター](https:
 
 ダウンロードには [VMware Customer Connect](https://customerconnect.vmware.com/) アカウントが必要なのでお持ちでない場合は新規に作成してください。
 
-NUC 用には ISO ファイルで提供されている標準の ESXi インストーラでは NIC ドライバなど必要なものが不足しているので ESXi は Offline Bundle と記載のある ZIP ファイルをダウンロードします。
+Intel NUC 11th 用には ISO ファイルで提供されている標準の ESXi インストーラでは NIC ドライバなど必要なものが不足しているので ESXi は Offline Bundle と記載のある ZIP ファイルをダウンロードします。
 
 VMware 製品のダウンロードに慣れている人は[製品パッチ](https://customerconnect.vmware.com/jp/patch) から入手しても構いません。
 
+カスタムインストーラを作成しない場合は ISO 形式の標準の ESXi インストーラをダウンロードして、**[ESXiのインストールと基本設定](./03_esxi_setup.md)** へお進みください。
 
-## NUC 用のドライバの入手
+## コミュニティドライバの入手
 
 VMware では [VMware Flings](https://flings.vmware.com) と呼ばれるサイトで検証ツール、製品化前のテスト段階のツールなどが公開されています。
-特に、NUC のオンボード NIC のドライバはここで公開されているものを組み込むことが必須なので活用しましょう。
+特に、Intel NUC 11th のオンボード NIC のドライバはここで公開されているものを組み込むことが必須なので活用しましょう。
+
 以下の3つのドライバは良く使われるので必要なものをダウンロードしましょう。
 
-<img src="./images/07_Flings_NIC.png">
+
+### Intel NIC ドライバ
+<img src="./images/02_Flings_NIC.png">
 
 [Community Networking Driver for ESXi](https://flings.vmware.com/community-networking-driver-for-esxi)
-- Intel NUC に搭載される NIC i225-V のドライバは標準の ESXi インストーラには含まれないため、Flings の NIC ドライバは必須のアイテム
+- Intel NUC 11th に搭載される NIC i225-V のドライバは標準の ESXi インストーラには含まれないため、Flings の NIC ドライバは必須のアイテム
 
-<img src="./images/08_Flings_NVMe.png">
+
+### NVMe ドライバ
+<img src="./images/02_Flings_NVMe.png">
 
 [Community NVMe Driver for ESXi](https://flings.vmware.com/community-nvme-driver-for-esxi)
-- ESXi に含まれる NVMe ドライバは市販の NVMe SSD はほとんど対応していないので、こちらのコミュニティドライバを利用。※ 私の環境では Transcend PCIe SSD 220S TS2TMTE220S の動作が確認できましたが、動作確認済みのものを Flings や Community で事前に確認してください。
+- ESXi に含まれる NVMe ドライバは市販の NVMe SSD はほとんど対応していないので、こちらのコミュニティドライバを利用。※ 私の環境では Transcend PCIe SSD 220S TS2TMTE220S の動作が確認できましたが、動作確認済みのものを Flings や Community で事前に確認してください。  
 
-<img src="./images/09_Flings_USBNIC.png">
+
+
+### USB NIC ドライバ
+<img src="./images/02_Flings_USBNIC.png">
 
 [USB Network Native Driver for ESXi](https://flings.vmware.com/usb-network-native-driver-for-esxi)
 - Intel NUC の標準 NIC 1port だけだと足りない、という方向けの USB NIC 用のドライバ。対応する ESXi のバージョンが限定的なため利用時には注意が必要。
@@ -64,7 +74,7 @@ PowerCLI のインストールや、利用前の準備については私の過�
 
 
 ### カスタムインストーラ作成の流れ
-<img src="./images/10_CustomISO.png" width="50%">
+<img src="./images/02_CustomISO.png" width="50%">
 
 ### PowerCLI Image builder を利用して NUC 用ドライバ入りのカスタムインストーラの作成
 
@@ -161,23 +171,6 @@ PS C:\temp\ESXi> Export-EsxImageProfile -ImageProfile $ip2 -FilePath .\Intel-NUC
 
 
 #### オプション : システム領域サイズのカスタマイズ
-USB に展開したインストーラの kickstart をカスタムして、初期設定の投入を自動化する事も可能です。
-※ 詳細は William Lam さんの Blog 等を参照ください <https://williamlam.com/2019/07/automated-esxi-installation-to-usb-using-kickstart.html>
-
-まず、カスタムインストーラを展開した USB メモリを PC にマウントし、USB:\BOOT.CFG と USB:\EFI\BOOT\BOOT.CFG を修正します。
-
-```
-bootstate=0
-title=Loading ESXi installer
-timeout=5
-prefix=
-kernel=/b.b00
-kernelopt=runweasel systemMediaSize=min       ← kernelopt=runweasel cdromBoot の cdromBoot を systemMediaSize=min に変更しシステム領域のサイズを追加 ※ 自宅らぼなら Boot 領域は Min 設定で十分
-modules=/jumpstrt.gz --- /useropts.gz --- /features.gz --- /k.b00 --- /uc_intel.b00 --- /uc_amd.b00 --- build=7.0.2-0.20.18426014
-updated=0
-```
-
-上記設定では kickstart と合わせて、ESXi のシステム領域のサイズを指定しています。
 ※ ESXi 7.0u1c から systemMediaSize Boot Option を指定する事でデフォルトのサイズを指定できる様になりました。設定なしだと OSData パーティション が最大 120 GB まで確保されてしま
 自宅 Lab 用途などでブートドライブの VMFS 領域を有効に利用したい場合は以下オプションで適切なサイズでのインストールが可能です。(以下の GB 単位は GiB ではなく SI 接頭辞の GB)
 
@@ -190,17 +183,40 @@ updated=0
 - default (138 GB)
 - max (consume all available space, for multi-terabyte servers)
 
-インストール時のメディアで boot.cfg に kernelopt=runweasel systemMediaSize=min などとすることでサイズを指定することも可能です。
+ESXi のインストーラを NUC にマウントして起動させた直後、"Shift-O" を押下する事で、オプション設定モードに入ります。
+
+この画面で "Shift+O" を押下し、
+
+<img src="./images/03_ESXi_Install01.png" width="50%">
+
+続いて systemMediaSize=min 等と追記して Enter でインストールを続行する事でシステム領域のサイズを指定します。
+
+<img src="./images/03_ESXi_Install17.png" width="50%">
+
+
+またはインストーラを展開した USB メディアを PC で開き、boot.cfg ファイルの 6行目を kernelopt=runweasel systemMediaSize=min などとすることでサイズを指定することも可能です。
+
+```
+bootstate=0
+title=Loading ESXi installer
+timeout=5
+prefix=
+kernel=/b.b00
+kernelopt=runweasel cdromBoot systemMediaSize=min       ← kernelopt=runweasel cdromBoot の後に systemMediaSize=min に追加しシステム領域のサイズを指定 ※ 自宅らぼなら Boot 領域は Min 設定で十分
+modules=/jumpstrt.gz --- /useropts.gz --- /features.gz --- /k.b00 --- /uc_intel.b00 --- /uc_amd.b00 --- build=7.0.2-0.20.18426014
+updated=0
+```
+
 
 ※ 公式サポートのない設定オプションで autoPartitionOSDataSize を利用して任意のサイズを指定する事も可能です。
 その場合は autoPartitionOSDataSize=8192 等と設定をします。
 
 #### オプション : kickstart ファイルの使用
+USB に展開したインストーラの kickstart をカスタムして、初期設定の投入(Installer に kickstart ファイルを仕込み、ホスト名や IP アドレス、パスワードの設定など)を自動化する事も可能です。
 
-その他、Installer に kickstart ファイルを仕込み、ホスト名や IP アドレス、パスワードの設定、簡単なスクリプトの事前実行などを自動で行う事も可能です。
 詳細は以下 VMware のアーキテクトでもあり vExpert として自宅ラボの様々な Tips をブログで公開している William Lam のサイトなどでも紹介されていますので、興味のある方はご覧ください。
 
 -[Automated ESXi Installation to USB using Kickstart](https://williamlam.com/2019/07/automated-esxi-installation-to-usb-using-kickstart.html)
 
 
-次へ **[ESXiのインストールと基本設定](./03_esxi_setup.md)**
+次は **[ESXi のインストールと基本設定](./03_esxi_setup.md)** です。

@@ -1,10 +1,10 @@
 1. [メインへ](./README.md)
-2. [NUCの初期設定](./01_nuc_setup.md)
-3. [ESXiインストーラの作成](./02_esxi_custom_installer.md)
-4. [ESXiのインストールと基本設定](./03_esxi_setup.md)
-5. [vCenterのデプロイと基本設定](./04_vcenter_setup.md)
-6. [Nested ESXiのデプロイ](./05_nested_esxi.md)
-7. [vSphere Clusterの作成](./06_vsphere_cluster.md)
+2. [NUC の初期設定](./01_nuc_setup.md)
+3. [ESXi インストーラの作成](./02_esxi_custom_installer.md)
+4. [ESXi のインストールと基本設定](./03_esxi_setup.md)
+5. [vCenter のデプロイと基本設定](./04_vcenter_setup.md)
+6. [Nested ESXi のデプロイ](./05_nested_esxi.md)
+7. [vSphere Cluster の作成](./06_vsphere_cluster.md)
 
 # NUC の初期設定
 
@@ -68,9 +68,9 @@ Boot > Secure Boot > Secure Boot 			: Disabled
 今回利用している NUC11PAHi5 ならば [Intel のサポートサイト](https://via.vmw.com/EacX) から "BIOS アップデート" の ZIPファイルをダウンロード、含まれる拡張子 .cap ファイルを空の USB メモリなどにコピーします。
 ※ 必ずご利用のモデル名で Intel サポートサイトを検索して、適切なファイルをダウンロードして下さい。
 
-<img src="./images/06_NUC_BIOS.png" width="50%">
+<img src="./images/01_NUC_BIOS.png" width="50%">
 
 NUC への更新ファイルの適用は NUC 起動直後に F7 キーを押下し、BIOS メンテナンスモードを起動、USB メモリにコピーした .cap ファイルを読み込ませて更新します。
 
 
-次へ **[ESXiインストーラの作成](./02_esxi_custom_installer.md)**
+次は **[ESXi インストーラの作成](./02_esxi_custom_installer.md)** です。
