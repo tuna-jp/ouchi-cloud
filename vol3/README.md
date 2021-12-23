@@ -19,7 +19,7 @@ Software Design 誌 2022年 1月号に記した以下の流れに沿って、作
 4. [vCenterのデプロイと基本設定](./04_vcenter_setup.md)
 5. [Nested ESXiのデプロイ](./05_nested_esxi.md)
 6. [vSphere Clusterの作成](./06_vsphere_cluster.md)
-
+7. [自宅 vSphere らぼの Expert をご紹介](./07_expert.md)
 
 <img src="./images/00_Setup.png">
 
@@ -58,4 +58,4 @@ Software Design 誌 2022年 1月号に記した以下の流れに沿って、作
 
 
 
-次へ **[NUCの初期設定](./01_nuc_setup.md)**
+まずは **[NUCの初期設定](./01_nuc_setup.md)** をしましょう。
