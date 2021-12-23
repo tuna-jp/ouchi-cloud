@@ -70,7 +70,7 @@ Boot > Secure Boot > Secure Boot 			: Disabled
 今回利用している NUC11PAHi5 ならば [Intel のサポートサイト](https://via.vmw.com/EacX) から "BIOS アップデート" の ZIPファイルをダウンロード、含まれる拡張子 .cap ファイルを空の USB メモリなどにコピーします。
 ※ 必ずご利用のモデル名で Intel サポートサイトを検索して、適切なファイルをダウンロードして下さい。
 
-<img src="./images/01_NUC_BIOS.png" width="80%">
+<img src="./images/01_NUC_BIOS.png" width="100%">
 
 NUC への更新ファイルの適用は NUC 起動直後に F7 キーを押下し、BIOS メンテナンスモードを起動、USB メモリにコピーした .cap ファイルを読み込ませて更新します。
 
