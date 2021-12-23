@@ -3,7 +3,7 @@
 VMware Japan で vSAN HCI や Cloud foundation といったインフラ製品(仮想化基盤)のプロダクト SE をしている[川満](https://vexpert.vmware.com/directory/477)です。  
 Twitter は本名のまま [@yuki_kawamitsu](https://twitter.com/yuki_kawamitsu) 、そのほかに個人ブログ**[「調べたこと 試したこと」](https://kwmtlog.blogspot.com/)**でも vSphere や vSAN 関連のネタを公開しています。
 
-本コンテンツは執筆を担当した Software Design 誌 2022年 1月号 146頁 ~ 152頁 "はじめよう おうちクラウド" 第3回 "仮想化基盤を作ってみよう" の掲載内容を補足するサンプルスクリプト、参照先情報をまとめたものとなります。
+本コンテンツは執筆を担当した **[Software Design 誌 2022年 1月号](https://gihyo.jp/magazine/SD/archive/2022/202201)** 146頁 ~ 152頁 **"はじめよう おうちクラウド" 第3回 "仮想化基盤を作ってみよう"** の掲載内容を補足するサンプルスクリプト、参照先情報をまとめたものとなります。
 
 そして勝手ながら、日本の VMware コミュニティのエキスパート、vExpert の皆さんで持ち回りで投稿しているアドベントカレンダー、**[vExperts Advent Calendar 2021](https://adventar.org/calendars/6689) の 12/24 のコンテンツ**も兼ねさせていただきました。  
 年末年始、25本のディープなネタを一気に閲覧してみてください。
