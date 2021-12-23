@@ -14,7 +14,7 @@
 
 ## Nested ESXi を導入する準備
 
-**[Nested ESXi を動かすための仕込み]()** の項でご紹介した ESXi での設定を事前に済ませてください。
+**[Nested ESXi を動かすための仕込み](https://github.com/tanzu-japan/ouchi-cloud/blob/main/vol3/03_esxi_setup.md#nested-esxi-%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%81%9F%E3%82%81%E3%81%AE%E4%BB%95%E8%BE%BC%E3%81%BF)** の項でご紹介した ESXi での設定を事前に済ませてください。
 
 ## Nested ESXi 用の仮想マシンの作成
 
