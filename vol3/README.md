@@ -49,7 +49,7 @@ Software Design 誌 2022年 1月号に記した以下の流れに沿って、作
 
 準備した NUC にこの後 vSphere ESXi をインストールしていきますが、今回は 2.5 inchの SSD に ESXi をインストールし、残りの領域と NMVe SSD を仮想マシンデータ (VMDK ファイル) を格納するデータストアとして利用します。
 
-<img src="./images/00_NUC_Install.png" width="80%">
+<img src="./images/00_NUC_Install.png" width="50%">
 
 
 
