@@ -18,6 +18,7 @@
 今回まとめた内容は、Software Design 誌 2022年 1月号 の紙面情報の他、2021年9月に開催されたコミュニティイベントの登壇資料にもまとめておりますので併せて参照願います。  
 [自宅らぼ再入門　おうちクラウドのすすめ](https://www.slideshare.net/yukikawamitsu/20210922-250264836) - Intel NUC を利用して自宅で vSphere ESXi クラスタを導入するための考慮点を紹介。
 
+
 ## 日本の Expert たち
 
 - 日本の VMware コミュニティといえばこの人、[@gowatana](https://twitter.com/gowatana) さんの VMware Blog [「NEOにほんごVMware（仮）」](https://vm.gowatana.jp/)  
@@ -34,3 +35,22 @@ VMware の項は強烈に分かり易い解説と合わせて Nested ESXi 構成
 
 - グローバルで Tech な VMware コミュニティの人といえばこの人 [William Lam @lamw](https://twitter.com/lamw) さん、彼のブログ https://williamlam.com/ はかなりの人が情報元としているサイトで自宅らぼネタも豊富です！必見！
 - Intel NUC での自宅らぼ情報などでかなり Deep な情報を発信されている [Florian @virten](https://twitter.com/virten) のブログ、https://www.virten.net/ も要チェック！
+
+
+## VMware vExpert とは？
+VMware では毎年12 月と6 月の2 回、VMwareテクノロジの普及に貢献してくださったエンジニアを表彰するvExpert というアワードを開催しています。
+
+https://vexpert.vmware.com/
+
+まさに今、2022年1月14日締め切りで vExpert 2022 の申し込み期間中です。
+
+この一年、ブログやコミュニティ活動などで VMware に関する情報発信をされた方なら誰でも応募可能です。
+
+vExpert になると 1年間の各種 VMware 製品の検証ライセンスが提供されるので自宅らぼ環境の運用に大きなメリットになるはずです。  
+奮ってご応募ください。
+
+
+ちなみに、全世界の vExpert の一覧は以下で公開されており、"Japan" などで検索する日本の vExpert も大勢いる事が分かります。
+各人のリンクにアクセスるとどのような事をしている人なのか、公開しているブログ情報や Github 情報、Twitter アカウントなどその人が公開を許可しているコンテンツにアクセスできるので技術情報収集にご活用下さい。
+
+https://vexpert.vmware.com/directory
