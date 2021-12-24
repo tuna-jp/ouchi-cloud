@@ -28,7 +28,7 @@ VMware の項は強烈に分かり易い解説と合わせて Nested ESXi 構成
 - [@akira6592](https://twitter.com/akira6592) さんのブログ、[「てくなべ(tekunabe)」](https://tekunabe.hatenablog.jp/)  
 ネットワークから自動化まで、幅広い技術話題を分かり易く提供されていますが、Intel NUC での自宅らぼレポートがこれから NUC で自宅らぼを考えている人にはかなり有益な情報になると思います。
 - [@Jangari_nTK](https://twitter.com/Jangari_nTK) さんのブログ、[「vSoliloquy」](https://jangari-ntk.github.io/)  
-結構マニアックに API でのクラスタ操作やログ操作、証明書など認証系の検証ネタを後悔しているのでより深く自宅らぼの沼に足を踏み入れた時に要チェック！
+結構マニアックに API でのクラスタ操作やログ操作、証明書など認証系の検証ネタを公開されておりますので、より深く自宅らぼの沼に足を踏み入れた時に要チェック！
 
 ## 海外の Expert たち
 
