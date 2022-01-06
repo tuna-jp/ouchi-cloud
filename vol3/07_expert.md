@@ -24,6 +24,9 @@
 - 日本の VMware コミュニティといえばこの人、[@gowatana](https://twitter.com/gowatana) さんの VMware Blog [「NEOにほんごVMware（仮）」](https://vm.gowatana.jp/)  
 VMware Technology Network (VMTN) のモデレータもされている vExpert @gowatana さん。
 この人の情報量と過去から積み重ねたブログやコミュニティの記事は国宝級！
+- 今回の SD 誌おうちクラウド連載でも執筆されている VMware の佐藤さん [@hirotaka0426](https://twitter.com/hirotaka0426) のおうちクラウドネタ、特に NUC で作るおうちクラウドのレポートが非常に参考になります！  
+[Qiita - @hirosat](https://qiita.com/hirosat)  
+特に一昨年末(2020年12月)は佐藤さん一人で [「NUCで始めるVMware Tanzu Advent Calendar 2020」](https://qiita.com/advent-calendar/2020/nuc-vmware-tanzu) を敢行するなど情報満載です。
 - [@syauichi](https://twitter.com/syauichi) さんのブログ、[「CCIE candidate 応援サイト : ネットワークチェンジニアとして」](https://changineer.info/)  
 VMware の項は強烈に分かり易い解説と合わせて Nested ESXi 構成時のなぜこうするのか？等がとても分かり易く図解されています。要チェック。
 - [@akira6592](https://twitter.com/akira6592) さんのブログ、[「てくなべ(tekunabe)」](https://tekunabe.hatenablog.jp/)  
