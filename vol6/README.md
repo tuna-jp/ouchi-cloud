@@ -91,3 +91,14 @@ sudo tsunagu-server --server.port=443 --tsunagu.tls.crt=/etc/letsencrypt/live/ou
 https://ouchi.168-138-44-162.sslip.io にアクセスしてブラウザのアドレスバーに鍵マークが出ればOKです。
 
 <img width="1024" alt="image" src="https://user-images.githubusercontent.com/106908/161431241-84f8f9ac-194b-4cdd-b223-5dcc65d8a7bc.png">
+
+以降は、記事のP.180以降と同じです。
+
+`tsunagu-client.yaml`には
+
+```yaml
+- name: TSUNAGU_REMOTE
+  value: wss://ouchi.168-138-44-162.sslip.io
+```
+
+を設定して下さい。
