@@ -253,15 +253,16 @@ PC 上の ISO イメージファイルを直接仮想マシンに接続させる
 ## Nested ESXi を動かすための仕込み
 
 この後、vCenter をインストールする前に、Nested ESXi 環境の利用を可能にする設定を入れておきましょう。
+※ 物理側の ESXi に入れる他、個別の仮想マシンに対して有効化する方法も可能です。
 
-ESXi の上にさらに ESXi を仮想マシンとして動かす場合には /etc/vmware/config に vhv.allow = "TRUE" の設定を1行追加します。
+ESXi の上にさらに ESXi を仮想マシンとして動かす場合には /etc/vmware/config に vhv.enable = "TRUE" の設定を1行追加します。
 
 ESXi に SSH で接続するかローカルコンソール(DCUI)から Alt＋F1 キーを押して ESXi Shell を起動して root でログインします。
 
 以下の一文を投げれば config ファイルに設定が追加されます。
 
 ```shell
-echo 'vhv.allow = "TRUE"' >> /etc/vmware/config
+echo 'vhv.enable = "TRUE"' >> /etc/vmware/config
 ```
 
 また、Inetl NUC だと現時点では実現が難しいですが、その他の PC や Server を利用して物理 ESXi を複数台組み合わせて vSAN 構成としている場合、  
