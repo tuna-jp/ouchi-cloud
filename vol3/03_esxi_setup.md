@@ -1,4 +1,6 @@
-![image](https://github.com/tuna-jp/ouchi-cloud/assets/90606865/0d4a3a44-05f2-4f73-ad3d-a2e4ab85ff39)1. [メインへ](./README.md)
+![image](https://github.com/tuna-jp/ouchi-cloud/assets/90606865/0d4a3a44-05f2-4f73-ad3d-a2e4ab85ff39)
+
+1. [メインへ](./README.md)
 2. [NUC の初期設定](./01_nuc_setup.md)
 3. [ESXi インストーラの作成](./02_esxi_custom_installer.md)
 4. [ESXi のインストールと基本設定](./03_esxi_setup.md)
