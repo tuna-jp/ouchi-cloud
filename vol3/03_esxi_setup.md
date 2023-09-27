@@ -257,18 +257,18 @@ PC 上の ISO イメージファイルを直接仮想マシンに接続させる
 この後、vCenter をインストールする前に、Nested ESXi 環境の利用を可能にする設定を入れておきましょう。
 ※ 物理側の ESXi に入れる他、個別の仮想マシンに対して有効化する方法も可能です。
 
-~ ESXi の上にさらに ESXi を仮想マシンとして動かす Nested 構成をつくる場合には /etc/vmware/config に vhv.enable = "TRUE" の設定を1行追加します。 ~ 
+~~ ESXi の上にさらに ESXi を仮想マシンとして動かす Nested 構成をつくる場合には /etc/vmware/config に vhv.enable = "TRUE" の設定を1行追加します。 ~~ 
 
-~ ESXi に SSH で接続するかローカルコンソール(DCUI)から Alt＋F1 キーを押して ESXi Shell を起動して root でログインします。 ~ 
+~~ ESXi に SSH で接続するかローカルコンソール(DCUI)から Alt＋F1 キーを押して ESXi Shell を起動して root でログインします。 ~~ 
 
-~ 以下の一文を投げれば config ファイルに設定が追加されます。 ~ 
+~~ 以下の一文を投げれば config ファイルに設定が追加されます。 ~~ 
 
 
-~
+~~
 ```shell
-echo 'vhv.enable = "TRUE"' >> /etc/vmware/config
+~~ echo 'vhv.enable = "TRUE"' >> /etc/vmware/config ~~ 
 ```
-~ 
+~~ 
 
 vSphere 7.0 u3 以降、ESXi で vhv.enable = "TRUE" が有効になっていると vCLS が起動できず DRS などのクラスタサービスが利用できません。
 物理側の ESXi で vhv.enable = "TRUE" を有効化するのではなく、仮想マシン事のハードウェアアシスト機能を有効にして .vmx ファイルに vhv.enable = "TRUE" を追記してください。
